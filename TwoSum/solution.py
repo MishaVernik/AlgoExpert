@@ -21,7 +21,7 @@ def twoSum_1(nums, target):
     for i in range(size):
         for j in range(i+1, size):
             if nums[i] + nums[j] == target:
-                return [nums[i], nums[j]]
+                return [min(nums[i],nums[j]),max(nums[i],nums[j])]
     return []
 
 
@@ -36,7 +36,7 @@ def twoSum_2(nums, target):
     hash_map = dict()
     for elm in nums:
         if (target - elm) in hash_map:
-            return [target - elm, elm]
+            return [min(target - elm,elm), max(target - elm,elm)]
         else:
             hash_map[elm] = True
     return []
